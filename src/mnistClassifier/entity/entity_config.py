@@ -15,6 +15,8 @@ class DataIngestionConfig:
 @dataclass(frozen=True)
 class DataPreprocessingConfig:
     preprocessor_path:str
+    train_path:str
+    test_path:str
     
 @dataclass(frozen=True)
 class TrainModelConfig:

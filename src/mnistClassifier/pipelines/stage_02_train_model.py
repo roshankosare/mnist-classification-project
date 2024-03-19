@@ -1,15 +1,15 @@
 import sys
-from src.exception import CustomException
-from src.config.configuration import ConfigManeger
-from src.components.data_preprocessing import DataPreprocessing
-from src.components.train_model import TrainModel
+from mnistClassifier.exception import CustomException
+from mnistClassifier.config.configuration import ConfigManeger
+from mnistClassifier.components.data_preprocessing import DataPreprocessing
+from mnistClassifier.components.train_model import TrainModel
 
 
 class TrainModelStep:
     def __init__(self) -> None:
         pass
     
-    def main():
+    def main(self):
         config = ConfigManeger()
         data_preprocessing_config = config.get_data_preprocessing_config()
         train_model_config = config.get_train_model_config()

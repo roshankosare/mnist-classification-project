@@ -9,7 +9,8 @@ data_ingestion:
 
 data_preprocessing:
   data_preprocessor_path: artifacts/models/preprocessor.pkl 
-
+  train_path: artifacts/data/train.csv
+  test_path: artifacts/data/test.csv
 train_model:
   trained_model_path: artifacts/models/model.h5
 

@@ -1,16 +1,16 @@
 from dataclasses import dataclass
 import pandas as pd 
 import os
-from src.logger import logging
+from mnistClassifier.logger import logging
 import numpy as np
 
 
-from src.exception import CustomException
+from mnistClassifier.exception import CustomException
 import sys
-from src.utils.utils import load_object
+from mnistClassifier.utils.utils import load_object
 from sklearn.metrics import accuracy_score
 from tensorflow.keras.models import load_model
-from src.entity.entity_config import EvaluateModelConfig
+from mnistClassifier.entity.entity_config import EvaluateModelConfig
 
 class EvaluateModel:
     def __init__(self,config:EvaluateModelConfig) -> None:

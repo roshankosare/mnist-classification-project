@@ -2,16 +2,16 @@
 from dataclasses import dataclass
 import pandas as pd 
 import os
-from src.logger import logging
+from mnistClassifier.logger import logging
 
-from src.exception import CustomException
+from mnistClassifier.exception import CustomException
 import sys
 from sklearn.preprocessing import StandardScaler
-from src.utils.utils import save_object
+from mnistClassifier.utils.utils import save_object
 from typing import Union
 from typing_extensions import Annotated
 from keras.utils import to_categorical
-from src.entity.entity_config import DataPreprocessingConfig
+from mnistClassifier.entity.entity_config import DataPreprocessingConfig
 
 
 
@@ -23,7 +23,7 @@ class DataPreprocessing:
        
         self.config = config
     
-    def initiate_data_preprocessing(self,train_path:str,test_path:str)->Union[
+    def initiate_data_preprocessing(self)->Union[
         Annotated[pd.DataFrame,"X_train"],
         Annotated[pd.Series,"y_train"],
         Annotated[pd.DataFrame,"X_test"],
@@ -32,8 +32,8 @@ class DataPreprocessing:
        try:
             logging.info("<++++++++++++ Data Preprocessing Started ++++++++++++++>")
             self.preprocessor = StandardScaler()
-            train = pd.read_csv(train_path)
-            test = pd.read_csv(test_path)
+            train = pd.read_csv(self.config.train_path)
+            test = pd.read_csv(self.config.test_path)
             
             X_train,y_train,X_test,y_test = (
                 train.drop(columns=["label"]),train["label"],

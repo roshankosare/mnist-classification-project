@@ -24,7 +24,12 @@ class ConfigManeger:
     
     def get_data_preprocessing_config(self)->DataPreprocessingConfig:
         config = self.config.data_preprocessing
-        data_preprocessing_config = config.data_preprocessor_path
+        data_preprocessing_config = DataPreprocessingConfig(
+            preprocessor_path=config.data_preprocessor_path,
+            train_path=config.train_path,
+            test_path=config.test_path
+        )
+        
         return data_preprocessing_config
         
     def get_train_model_config(self)->TrainModelConfig:
@@ -33,6 +38,6 @@ class ConfigManeger:
         return train_model_config    
 
     def get_evaluate_model_config(self)->EvaluateModelConfig:
-        config:self.evaluate_model
+        config = self.config.evaluate_model
         evaluate_model_config = EvaluateModelConfig(trained_model_path=config.trained_model_path)
         return evaluate_model_config

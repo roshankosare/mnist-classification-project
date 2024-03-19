@@ -1,21 +1,21 @@
 from dataclasses import dataclass
 import pandas as pd 
 import os
-from src.logger import logging
+from mnistClassifier.logger import logging
 
-from src.exception import CustomException
+from mnistClassifier.exception import CustomException
 import sys
 
-from src.components.models.cnn_mnist import CnnModel
+from mnistClassifier.components.models.cnn_mnist import CnnModel
 import keras
-from src.entity.entity_config import TrainModelConfig
+from mnistClassifier.entity.entity_config import TrainModelConfig
    
     
 class TrainModel:
     def __init__(self,config:TrainModelConfig) -> None:
        self.config = config
         
-    def initiate_model_training(self,X_train:pd.DataFrame,y_train:pd.DataFrame,X_test:pd.DataFrame,y_test:pd.DataFrame)->ModelTrainConfig:
+    def initiate_model_training(self,X_train:pd.DataFrame,y_train:pd.DataFrame,X_test:pd.DataFrame,y_test:pd.DataFrame):
         
         try:
             logging.info("<++++++++++++ Model Training has Started ++++++++++++>")

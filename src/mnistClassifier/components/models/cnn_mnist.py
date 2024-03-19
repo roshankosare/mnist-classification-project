@@ -6,7 +6,7 @@ from tensorflow.keras.layers import Conv2D,MaxPooling2D,Flatten,Dense
 import pandas as pd
 import numpy as np
 
-from src.exception import CustomException
+from mnistClassifier.exception import CustomException
 
 
 class CnnModel:

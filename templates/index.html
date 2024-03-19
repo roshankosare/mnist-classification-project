@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    
+    <div class="main">
+        <div class="container">
+            <h1 class="margin-y-5">Handwritten Digit Prediction</h1>
+            <p class="margin-y-5">Draw digt on Below Canvas and then Click on predict to view prediction</p>
+            <canvas id="myCanvas" width="400" height="400"></canvas>
+            <div class="button-area">
+                <button class="button" onclick="sendImage()">Predic</button>
+                <button class="button" onclick="clearCanvas()">Clear</button>
+            </div>
+        </div>
+        <div class="prediction">
+            <h1 id="prediction">Prediction:</h1>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

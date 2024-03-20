@@ -6,6 +6,9 @@ To ensure a structured and organized development process, I adopted a modular co
 
 By following this systematic approach, I aimed to create an efficient and robust system for handwritten digit recognition, seamlessly integrating machine learning with web technology.
 
+### Project Screenshots
+
+![snap-1](outputs/snap-1.png)
 
 
 # Setup This Project Locally

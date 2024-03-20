@@ -11,6 +11,11 @@ stages:
       hash: md5
       md5: 9d921a2218e0c891808dae26f56e6c6f
       size: 742
+    outs:
+    - path: artifacts/data/train.csv
+      hash: md5
+      md5: 865d59707ccecff041ecae83ac71c5f8
+      size: 87719150
   train_model:
     cmd: python src/mnistClassifier/pipelines/stage_02_train_model.py
     deps:
@@ -30,12 +35,17 @@ stages:
       hash: md5
       md5: f298d618d317098ae351050283bdb42c
       size: 1073
+    outs:
+    - path: artifacts/models/model.h5
+      hash: md5
+      md5: 5623394a5ffa7f2cdf2270c0c60568c2
+      size: 1493760
   evaluate_model:
     cmd: python src/mnistClassifier/pipelines/stage_03_evaluate_model.py
     deps:
     - path: artifacts/models/model.h5
       hash: md5
-      md5: db072f1a7b512e4856e262a54105b95b
+      md5: 5623394a5ffa7f2cdf2270c0c60568c2
       size: 1493760
     - path: artifacts/models/preprocessor.pkl
       hash: md5

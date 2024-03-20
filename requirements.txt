@@ -1,1 +1,9 @@
+tensorflow
+scikit-learn
+dvc
+pandas
+numpy
+python-box
+flask
+Pillow
 -e .

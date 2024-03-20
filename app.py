@@ -4,10 +4,10 @@ import base64
 from PIL import Image
 from io import BytesIO
 import pandas as pd
-from src.utils.image import preprocess_image
-from src.pipelines.prediction import PredictionPipeline
+from src.mnistClassifier.utils.image import preprocess_image
+from src.mnistClassifier.pipelines.prediction import PredictionPipeline
 import numpy as np
-import matplotlib.pyplot as plt
+
 application = Flask(__name__)
 
 
@@ -38,11 +38,6 @@ def home():
         df = pd.DataFrame(processed_image)
         
         df = predictor.preprocesses_data(df)
-        image_resized = img.resize((28, 28))
-    # Convert image to grayscale
-        img_gray = image_resized.convert('L')
-        img_gray = img_gray.convert('L')  # Convert image to grayscale
-        img_gray.save("received_image_gray.png") 
         df = np.array(df).reshape(df.shape[0], 28, 28, 1)
        
         prediction = predictor.make_prediction(df)

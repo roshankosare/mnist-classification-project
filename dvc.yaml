@@ -5,9 +5,9 @@ stages:
     deps:
       - src/mnistClassifier/pipelines/stage_01_data_ingestion.py
       - config/config.yaml
-    # outs:
-    #   - artifacts/data/data.zip
-
+    outs:
+      - artifacts/data/train.csv:
+          cache: false
 
   train_model:
     cmd: python src/mnistClassifier/pipelines/stage_02_train_model.py 
@@ -16,8 +16,9 @@ stages:
       - config/config.yaml
       - artifacts/data/train.csv
       - artifacts/data/test.csv
-    # outs:
-    #   - artifacts/models/model.h5
+    outs:
+      - artifacts/models/model.h5:
+          cache: false
 
   evaluate_model:
     cmd: python src/mnistClassifier/pipelines/stage_03_evaluate_model.py 
@@ -26,5 +27,4 @@ stages:
       - config/config.yaml
       - artifacts/models/model.h5
       - artifacts/models/preprocessor.pkl
-
-    
+      

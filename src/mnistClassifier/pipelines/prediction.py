@@ -1,16 +1,16 @@
 import os
 from tensorflow.keras.models import load_model
 import pandas as pd
-from src.utils.utils import load_object
+from mnistClassifier.utils.utils import load_object
 
 
 
 class PredictionPipeline:
     
     def __init__(self) -> None:
-         self.model_path = os.path.join("artifacts","model","model.h5")
+         self.model_path = os.path.join("artifacts","models","model.h5")
          self.model = None
-         self.preprocessor_path = os.path.join("artifacts","model","preprocessor.pkl")
+         self.preprocessor_path = os.path.join("artifacts","models","preprocessor.pkl")
          self.preprocessor = None
     
     def load_model(self):

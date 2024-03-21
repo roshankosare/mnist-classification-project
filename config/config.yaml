@@ -6,6 +6,10 @@ data_ingestion:
   extract_data_path: artifacts/data/
   download_path: artifacts/data/data.zip
 
+build_config:
+  model_build_path: artifacts/models/model.h5
+
+
 
 data_preprocessing:
   data_preprocessor_path: artifacts/models/preprocessor.pkl 

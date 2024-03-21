@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+
 import pandas as pd 
 import os
 from mnistClassifier.logger import logging
@@ -9,6 +9,7 @@ import sys
 from mnistClassifier.components.models.cnn_mnist import CnnModel
 import keras
 from mnistClassifier.entity.entity_config import TrainModelConfig
+import numpy as np
    
     
 class TrainModel:
@@ -19,13 +20,21 @@ class TrainModel:
         
         try:
             logging.info("<++++++++++++ Model Training has Started ++++++++++++>")
-            self.model = CnnModel()
-            self.model.create_model()
+            model:keras.Model = keras.models.load_model(self.config.trained_model_path)
             
-            trained_model:keras.Model = self.model.train_model(X_train,y_train,X_test,y_test)
-            logging.info("<++++++++++++ Model Training Completed")
-            # trained_model.save(self.model_train_config.model_path)
-            trained_model.save(self.config.trained_model_path)
-        
+            # reshaping data as input shape required for model
+            X_train = np.array(X_train).reshape(X_train.shape[0], 28, 28, 1)
+            X_test =  np.array(X_test).reshape(X_test.shape[0], 28, 28, 1)
+            
+            # need to create new instance of optimizer for model and recompile model
+            new_optimizer = keras.optimizers.Adam()
+            model.compile(optimizer=new_optimizer, loss='categorical_crossentropy', metrics=['accuracy'])
+            
+            model.fit(X_train,y_train,
+             batch_size=self.config.batch_size,epochs=self.config.epochs)
+            logging.info("<++++++++++++ Model Training Completed +++++++++++++++++++>")
+           
+            
+            model.save(self.config.trained_model_path)
         except Exception as e:
             raise CustomException(e,sys)

@@ -6,7 +6,7 @@ stages:
       - src/mnistClassifier/pipelines/stage_00_build_model.py 
       - config/config.yaml
     outs:
-      - artifacts/models/model.h5:
+      - artifacts/models/basemodel.h5:
           cache: false
 
   data_ingestion:

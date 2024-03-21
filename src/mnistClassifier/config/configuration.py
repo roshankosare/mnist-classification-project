@@ -43,7 +43,9 @@ class ConfigManeger:
         params = self.params
         train_model_config= TrainModelConfig(trained_model_path=config.trained_model_path,
              epochs=params.EPOCHS,
-             batch_size=params.BATCH_SIZE)
+             batch_size=params.BATCH_SIZE,
+             model_path=config.model_path
+             )
         return train_model_config    
 
     def get_evaluate_model_config(self)->EvaluateModelConfig:

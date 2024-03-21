@@ -28,6 +28,7 @@ class TrainModelConfig:
     trained_model_path:str
     epochs:int
     batch_size:int
+    model_path:str
     
 @dataclass(frozen=True)
 class EvaluateModelConfig:

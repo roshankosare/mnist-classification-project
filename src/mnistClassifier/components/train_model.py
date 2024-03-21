@@ -35,6 +35,6 @@ class TrainModel:
             logging.info("<++++++++++++ Model Training Completed +++++++++++++++++++>")
            
             
-            model.save(self.config.trained_model_path)
+            model.save(self.config.model_path)
         except Exception as e:
             raise CustomException(e,sys)

@@ -7,7 +7,7 @@ data_ingestion:
   download_path: artifacts/data/data.zip
 
 build_config:
-  model_build_path: artifacts/models/model.h5
+  model_build_path: artifacts/models/basemodel.h5
 
 
 
@@ -16,7 +16,9 @@ data_preprocessing:
   train_path: artifacts/data/train.csv
   test_path: artifacts/data/test.csv
 train_model:
-  trained_model_path: artifacts/models/model.h5
+  trained_model_path: artifacts/models/basemodel.h5
+  model_path: artifacts/models/model.h5
+
 
 
 evaluate_model:

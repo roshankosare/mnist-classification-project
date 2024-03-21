@@ -161,4 +161,3 @@ cython_debug/
 
 artifacts
 **/__pycache__/
-dvc.lock

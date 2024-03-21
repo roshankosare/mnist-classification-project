@@ -5,8 +5,8 @@ stages:
     deps:
     - path: config/config.yaml
       hash: md5
-      md5: a17778216e62a2f9f63563ab16aeaaf2
-      size: 635
+      md5: 941a8a860204fc4f8d66e36e2229558c
+      size: 637
     - path: src/mnistClassifier/pipelines/stage_01_data_ingestion.py
       hash: md5
       md5: 9d921a2218e0c891808dae26f56e6c6f
@@ -29,8 +29,8 @@ stages:
       size: 87719150
     - path: config/config.yaml
       hash: md5
-      md5: a17778216e62a2f9f63563ab16aeaaf2
-      size: 635
+      md5: 941a8a860204fc4f8d66e36e2229558c
+      size: 637
     - path: src/mnistClassifier/pipelines/stage_02_train_model.py
       hash: md5
       md5: f298d618d317098ae351050283bdb42c
@@ -38,14 +38,14 @@ stages:
     outs:
     - path: artifacts/models/model.h5
       hash: md5
-      md5: 5623394a5ffa7f2cdf2270c0c60568c2
+      md5: 3b635b21cc09ea011779725e50fd4a03
       size: 1493760
   evaluate_model:
     cmd: python src/mnistClassifier/pipelines/stage_03_evaluate_model.py
     deps:
     - path: artifacts/models/model.h5
       hash: md5
-      md5: 5623394a5ffa7f2cdf2270c0c60568c2
+      md5: 3b635b21cc09ea011779725e50fd4a03
       size: 1493760
     - path: artifacts/models/preprocessor.pkl
       hash: md5
@@ -53,8 +53,8 @@ stages:
       size: 30285
     - path: config/config.yaml
       hash: md5
-      md5: a17778216e62a2f9f63563ab16aeaaf2
-      size: 635
+      md5: 941a8a860204fc4f8d66e36e2229558c
+      size: 637
     - path: src/mnistClassifier/pipelines/stage_03_evaluate_model.py
       hash: md5
       md5: 83901ebb16b025ff75e443a8b23ad883

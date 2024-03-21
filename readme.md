@@ -31,7 +31,7 @@ dvc repro
 This command will automaticaly run training pipeline. It will run all the steps in training
 1. Ingest data: This step will download data from source url and create train.csv and test.csv
 
-2. Taining model: This step will create the model and do training and then save model in artifacts/models/model/h5
+2. Training model: This step will create the model and do training and then save model in artifacts/models/model/h5
        
 3. Evaluate model: This step will load trained model from directory and will evaluate trainig model.
 

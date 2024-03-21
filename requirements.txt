@@ -6,4 +6,5 @@ numpy
 python-box
 flask
 Pillow
+mlflow
 -e .

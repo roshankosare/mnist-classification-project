@@ -40,4 +40,12 @@ This command will automaticaly run training pipeline. It will run all the steps 
 ```
 python app.py
 ```
-### visit http://127.0.0.1:5000/ in browser to access app
+### visit http://127.0.0.1:3000/ in browser to access app
+
+## To track experiments 
+run command
+```
+mlflow ui
+```
+
+visit http://127.0.0.1:3000 in browser to see experiments.

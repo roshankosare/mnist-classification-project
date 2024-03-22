@@ -5,6 +5,8 @@ stages:
     deps:
       - src/mnistClassifier/pipelines/stage_00_build_model.py 
       - config/config.yaml
+    params:
+      - DENSE_SIZE
     outs:
       - artifacts/models/basemodel.h5:
           cache: false
@@ -23,6 +25,7 @@ stages:
     deps:
       - src/mnistClassifier/pipelines/stage_02_train_model.py 
       - config/config.yaml
+      - artifacts/models/basemodel.h5
       - artifacts/data/train.csv
       - artifacts/data/test.csv
     params:

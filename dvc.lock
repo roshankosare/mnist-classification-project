@@ -11,10 +11,13 @@ stages:
       hash: md5
       md5: 5980ced57385763716eb0d1f3cd9a32f
       size: 690
+    params:
+      params.yaml:
+        DENSE_SIZE: 64
     outs:
     - path: artifacts/models/basemodel.h5
       hash: md5
-      md5: fc50f86b70f87eff03491358845ee60d
+      md5: fd79e015ab2c43f45988be03bf99a6e5
       size: 512816
   data_ingestion:
     cmd: python src/mnistClassifier/pipelines/stage_01_data_ingestion.py
@@ -43,6 +46,10 @@ stages:
       hash: md5
       md5: 865d59707ccecff041ecae83ac71c5f8
       size: 87719150
+    - path: artifacts/models/basemodel.h5
+      hash: md5
+      md5: fd79e015ab2c43f45988be03bf99a6e5
+      size: 512816
     - path: config/config.yaml
       hash: md5
       md5: fbd42975449165db3e30a4f81860308b
@@ -60,7 +67,7 @@ stages:
     deps:
     - path: artifacts/models/model.h5
       hash: md5
-      md5: 9dacab1715fa2d95cd0d6f76a902ea1e
+      md5: 0b187af10cbcd30a0714c6fe09fc78cd
       size: 1493760
     - path: artifacts/models/preprocessor.pkl
       hash: md5
@@ -72,5 +79,5 @@ stages:
       size: 754
     - path: src/mnistClassifier/pipelines/stage_03_evaluate_model.py
       hash: md5
-      md5: 83901ebb16b025ff75e443a8b23ad883
-      size: 1102
+      md5: 1862d8eb27af80f514b948484ab16142
+      size: 1150

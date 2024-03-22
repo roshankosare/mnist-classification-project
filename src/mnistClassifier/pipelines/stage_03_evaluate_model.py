@@ -19,6 +19,7 @@ class EvaluateModelStage:
             _,_,X_test,y_test = data_preprocessor.initiate_data_preprocessing()
             model_evaluator = EvaluateModel(config=model_evaluation_config)
             model_evaluator.initiate_model_evaluation(X_test,y_test)
+            model_evaluator.mlflow_log_model()
     
         
         
